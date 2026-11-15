@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-  base: "/rick-and-morty/",
+  base: "/rick-and-morty-react/",
   plugins: [react()],
   resolve: {
     alias: {

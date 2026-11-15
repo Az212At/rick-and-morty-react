@@ -21,7 +21,7 @@ yarn install --frozen-lockfile
 yarn dev
 ```
 
-Локальный адрес: [http://localhost:8080/rick-and-morty/](http://localhost:8080/rick-and-morty/).
+Локальный адрес: [http://localhost:8080/rick-and-morty-react/](http://localhost:8080/rick-and-morty-react/).
 
 ```bash
 yarn build          # проверка TypeScript и production-сборка в dist/
@@ -72,8 +72,12 @@ src/
 - `#/episodes` — эпизоды.
 - Неизвестный маршрут показывает страницу 404.
 
-Vite использует `base: "/rick-and-morty/"`, сохранённый для GitHub Pages. Для размещения в корне другого домена поменяйте `base` на `"/"` и соберите проект заново. HashRouter позволяет обновлять вложенные страницы без дополнительных правил сервера.
+Демо: [az212at.github.io/rick-and-morty-react](https://az212at.github.io/rick-and-morty-react/).
 
-Команда `yarn deploy` запускает существующий скрипт публикации в ветку `gh-pages` репозитория `Az212At/rick-and-morty`. Публикация выполняется только при явном запуске команды.
+Vite использует `base: "/rick-and-morty-react/"` для GitHub Pages. Для размещения в корне другого домена поменяйте `base` на `"/"` и соберите проект заново. HashRouter позволяет обновлять вложенные страницы без дополнительных правил сервера.
+
+Для публикации или обновления демки выполните `yarn deploy` из React-проекта. Скрипт собирает приложение и отправляет содержимое `dist` в ветку `gh-pages` текущего `origin` (`Az212At/rick-and-morty-react`). Нужны настроенные Git-учётные данные с правом записи. Ветка исходников `master` при этом не перезаписывается.
+
+В **Settings → Pages** необходимо выбрать **Deploy from a branch → gh-pages → /(root)** после первого успешного деплоя. Если раздел Pages недоступен, включить публикацию должен владелец или администратор репозитория. Пустой `public/.nojekyll` отключает обработку готовой сборки через Jekyll. HashRouter не требует дополнительных правил маршрутизации на хостинге.
 
 Исходный [дизайн-макет в Figma](https://www.figma.com/community/file/1225458908057208058/rick-and-morty).
