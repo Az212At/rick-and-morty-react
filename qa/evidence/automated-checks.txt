@@ -1,0 +1,69 @@
+Rick and Morty React — Automated QA evidence
+Date: 2026-11-16, Europe/Moscow
+Revision: b70fef2 (master)
+Runtime: Node v24.22.1; Yarn 1.22.22
+Local filesystem paths have been redacted from command output.
+
+COMMAND: yarn test
+EXIT CODE: 0
+
+yarn run v1.22.22
+$ vitest run
+
+ RUN  v3.2.4 [project]
+
+ ✓ src/test/api.test.ts (2 tests) 3ms
+ ✓ src/test/useResource.test.tsx (4 tests) 172ms
+ ✓ src/test/App.test.tsx (9 tests) 343ms
+
+ Test Files  3 passed (3)
+      Tests  15 passed (15)
+   Start at  18:14:43
+   Duration  1.10s (transform 88ms, setup 350ms, collect 155ms, tests 518ms, environment 735ms, prepare 117ms)
+
+Done in 1.78s.
+
+COMMAND: yarn type-check
+EXIT CODE: 0
+
+yarn run v1.22.22
+$ tsc --noEmit && tsc -p tsconfig.node.json --noEmit
+Done in 1.00s.
+
+PUBLIC API CHECKS — TERMINAL NETWORK PATH
+Method: direct Python urllib GET; not a browser request.
+Time: 2026-11-16 18:15:15 Europe/Moscow (15:15:15 UTC).
+API validation command exit code: 1.
+
+1. GET https://rickandmortyapi.com/api/character?page=1
+   Expected: HTTP 200 with character collection schema.
+   Actual: HTTP 403; blocked in the terminal network path.
+   Live API schema: NOT CONFIRMED.
+
+2. GET https://rickandmortyapi.com/api/episode?page=1
+   Expected: HTTP 200 with episode collection schema.
+   Actual: HTTP 403; blocked in the terminal network path.
+   Live API schema: NOT CONFIRMED.
+
+3. GET https://rickandmortyapi.com/api/character?name=[redacted-test-query]
+   The unique search value is redacted; the recorded status and result are unchanged.
+   Expected: HTTP 404 with an empty-result error response.
+   Actual: HTTP 403; blocked in the terminal network path.
+   Live API empty-result schema: NOT CONFIRMED.
+
+These responses are an execution-network limitation and are not classified as an application bug. Diagnostic response bodies and request tracking identifiers are omitted.
+A separate instrumented browser run observed successful UI loading in the embedded browser. That browser uses a different network path; its results are recorded separately and are not derived from these terminal API checks.
+
+MOCKED ERROR COVERAGE — AUTOMATED VITEST/JSDOM ONLY
+
+- API unit test: a mocked HTTP 503 response produces ApiError with status 503. This verifies status preservation, not live server availability or a browser HTTP 503 UI scenario.
+- Resource hook test: a mocked HTTP 404 is handled as no results, without a connection error.
+- App integration test: a mocked HTTP 404 produces the empty search state; resetting filters restores records.
+- Resource hook and App integration tests: fetch rejects with TypeError('Network failed'), then a retry succeeds. This is simulated network-failure coverage, not a manually verified offline browser scenario.
+- App integration test: an unknown MemoryRouter route displays the not-found UI. This is distinct from an API HTTP 404 response.
+- Resource hook tests also verify request cancellation and suppression of stale responses.
+
+SCOPE AND LIMITATIONS
+
+All 15 tests stub fetch. App integration tests run in jsdom with MemoryRouter, not a live browser with the production HashRouter. The modal Escape scenario dispatches a synthetic cancellable dialog cancel event. Automated passes must not be counted as manual browser passes or proof of real offline behavior.
+No production code, tests, or configuration were modified for this run. The working tree was clean after the automated checks.

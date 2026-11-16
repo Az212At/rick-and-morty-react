@@ -1,0 +1,303 @@
+{
+  "date": "2026-11-16",
+  "target": "https://az212at.github.io/rick-and-morty-react/",
+  "sourceCommit": "b70fef2810896b9764e5175dd239ae6b145df485",
+  "method": "Instrumented browser verification; DOM readouts and UI interactions, not Chrome DevTools or standalone Playwright tests.",
+  "observations": [
+    {
+      "id": "ENV",
+      "browser": "Embedded browser; engine version not exposed",
+      "assets": ["/rick-and-morty-react/assets/index-PFm8c2b1.js"],
+      "url": "https://az212at.github.io/rick-and-morty-react/#/characters",
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    },
+    {
+      "id": "TC-01",
+      "count": 20,
+      "firstImage": 300,
+      "loading": false,
+      "names": ["Rick Sanchez", "Morty Smith", "Summer Smith", "Beth Smith"],
+      "previousDisabled": true,
+      "url": "#/characters"
+    },
+    {
+      "id": "TC-02",
+      "active": "Эпизоды",
+      "count": 20,
+      "first": "Сезон и эпизод: S01E01PilotДата выхода: December 2, 2013Персонажей: 19",
+      "url": "#/episodes"
+    },
+    {
+      "id": "TC-03",
+      "allMatch": true,
+      "count": 20,
+      "name": "Rick",
+      "names": [
+        "Rick Sanchez",
+        "Adjudicator Rick",
+        "Alien Rick",
+        "Antenna Rick",
+        "Aqua Rick",
+        "Black Rick",
+        "Bootleg Portal Chemist Rick",
+        "Commander Rick",
+        "Cool Rick",
+        "Cop Rick",
+        "Cowboy Rick",
+        "Cronenberg Rick",
+        "Cyclops Rick",
+        "Doofus Rick",
+        "Evil Rick",
+        "Garment District Rick",
+        "Insurance Rick",
+        "Investigator Rick",
+        "Juggling Rick",
+        "Maximums Rickimus"
+      ],
+      "url": "#/characters?name=Rick"
+    },
+    {
+      "id": "TC-04",
+      "allDead": true,
+      "count": 20,
+      "status": "dead",
+      "statuses": [
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead",
+        "Статус: Dead"
+      ],
+      "url": "#/characters?status=dead"
+    },
+    {
+      "id": "TC-05",
+      "allMatch": true,
+      "count": 20,
+      "name": "Rick",
+      "pagination": "Страница 1 из 2",
+      "status": "alive",
+      "url": "#/characters?name=Rick&status=alive"
+    },
+    {
+      "id": "TC-08-reload",
+      "count": 20,
+      "name": "Rick",
+      "status": "alive",
+      "url": "#/characters?name=Rick&status=alive"
+    },
+    {
+      "id": "TC-07-next-last",
+      "count": 9,
+      "first": "Modern Rick",
+      "nextDisabled": true,
+      "pagination": "Страница 2 из 2",
+      "previousDisabled": false,
+      "url": "#/characters?name=Rick&status=alive&page=2"
+    },
+    {
+      "id": "TC-06",
+      "first": "Morty Smith",
+      "name": "Morty",
+      "pagination": "Страница 1 из 2",
+      "status": "alive",
+      "url": "#/characters?name=Morty&status=alive"
+    },
+    {
+      "id": "TC-08-history",
+      "first": "Modern Rick",
+      "name": "Rick",
+      "pagination": "Страница 2 из 2",
+      "status": "alive",
+      "url": "#/characters?name=Rick&status=alive&page=2"
+    },
+    {
+      "id": "TC-07-previous",
+      "first": "Rick Sanchez",
+      "pagination": "Страница 1 из 2",
+      "previousDisabled": true,
+      "url": "#/characters?name=Rick&status=alive&page=1"
+    },
+    {
+      "id": "TC-12-before-enter",
+      "tag": "INPUT",
+      "value": "Rick",
+      "elementId": "character-name"
+    },
+    {
+      "id": "TC-12-after-enter",
+      "activeId": "",
+      "activeTag": "BODY",
+      "activeText": "BODY",
+      "count": 20,
+      "name": "Rick",
+      "url": "#/characters?name=Rick"
+    },
+    {
+      "id": "TC-12-after-tab",
+      "activeHref": null,
+      "activeId": "character-name",
+      "activeTag": "INPUT",
+      "activeText": ""
+    },
+    {
+      "id": "TC-12-repeat",
+      "activeId": "",
+      "activeTag": "BODY",
+      "name": "Morty",
+      "url": "#/characters?name=Morty"
+    },
+    {
+      "id": "TC-09-open",
+      "body": "Персонаж #1Rick SanchezПоявлений в эпизодах: 51СтатусAliveВидHumanПолMaleПроисхождениеEarth (C-137)МестоположениеCitadel of Ricks",
+      "focus": "Закрыть информацию о персонаже",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "open": true,
+      "scrollLock": "hidden",
+      "title": "Rick Sanchez"
+    },
+    {
+      "id": "TC-09-close",
+      "focus": "Узнать больше: Rick Sanchez",
+      "open": false,
+      "scrollLock": ""
+    },
+    {
+      "id": "TC-10",
+      "focus": "Узнать больше: Rick Sanchez",
+      "open": false,
+      "scrollLock": ""
+    },
+    {
+      "id": "TC-11-empty",
+      "alert": null,
+      "cards": 0,
+      "heading": "Ничего не найдено",
+      "loading": false,
+      "message": "Попробуйте другое имя или сбросьте фильтры.",
+      "url": "#/characters?name=qa-nonexistent-20261116-9f7c"
+    },
+    {
+      "id": "TC-11-reset",
+      "cards": 20,
+      "name": "",
+      "url": "#/characters"
+    },
+    {
+      "id": "TC-13-out-of-range",
+      "cards": 0,
+      "heading": "Ничего не найдено",
+      "message": "Попробуйте другое имя или сбросьте фильтры.",
+      "name": "",
+      "pagination": null,
+      "status": "",
+      "url": "#/characters?page=999999"
+    },
+    {
+      "id": "EXP-footer-navigation",
+      "headerTop": -1109,
+      "headingTop": -573.640625,
+      "scrollY": 1109,
+      "url": "#/characters",
+      "viewportHeight": 1000
+    },
+    {
+      "id": "TC-13-before-footer",
+      "footerTop": 886.859375,
+      "scrollY": 1109,
+      "url": "#/episodes"
+    },
+    {
+      "id": "TC-13-footer-repeat",
+      "headingTop": -573.640625,
+      "scrollY": 1109,
+      "url": "#/characters",
+      "viewportHeight": 1000
+    },
+    {
+      "id": "TC-14-not-found",
+      "returnLink": "#/characters",
+      "title": "Страница не найдена",
+      "url": "#/qa-missing-route"
+    },
+    {
+      "id": "TC-14-return",
+      "url": "https://az212at.github.io/rick-and-morty-react/#/characters"
+    },
+    {
+      "id": "TC-15",
+      "results": [
+        {
+          "catalog": {
+            "columns": "288px",
+            "documentWidth": 320,
+            "inputWidth": 254,
+            "navWidth": 288,
+            "width": 320
+          },
+          "modal": {
+            "bottom": 888.1953125,
+            "closeButtonHeight": 44,
+            "contentWidth": 286,
+            "top": 111.796875,
+            "viewportHeight": 1000,
+            "width": 288
+          }
+        },
+        {
+          "catalog": {
+            "columns": "348px 348px",
+            "documentWidth": 768,
+            "inputWidth": 376.96875,
+            "navWidth": 251.234375,
+            "width": 768
+          },
+          "modal": {
+            "bottom": 706.6484375,
+            "closeButtonHeight": 44,
+            "contentWidth": 734,
+            "top": 293.3515625,
+            "viewportHeight": 1000,
+            "width": 736
+          }
+        },
+        {
+          "catalog": {
+            "columns": "282px 282px 282px 282px",
+            "documentWidth": 1440,
+            "inputWidth": 736.96875,
+            "navWidth": 251.234375,
+            "width": 1440
+          },
+          "modal": {
+            "bottom": 707.4453125,
+            "closeButtonHeight": 44,
+            "contentWidth": 898,
+            "top": 292.546875,
+            "viewportHeight": 1000,
+            "width": 900
+          }
+        }
+      ]
+    }
+  ],
+  "consoleErrors": []
+}
